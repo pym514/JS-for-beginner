@@ -1,74 +1,18 @@
-/* String
-const what = "yong";
-*/
+const title = document.querySelector("#title");
 
-/*
-Boolean
-const wat = true or false
-it is not a text
-*/
+const BASE_COLOR = "red";
+const OTHER_COLOR = "#7f8c8d";
 
-/*
-Number
-const wat = 777;
-*/
-
-/*Float
-const wat = 55.1;
-*/
-
-/* Array
-    const daysOfWeek = [mon to sun etc.]
-*/
-
-/*
-const yongInfo = {
-  name: "yong",
-  age: 30,
-  gender: "male",
-  ishandsome: true,
-  favMovies: ["along the god", "lotr", "oldboy"],
-};
-console.log(yongInfo.favMovies);
-*/
-
-/*
-function info(name, age) {
-  console.log("hello", name, "your age is", age);
+function handleClick() {
+  const currentColor = title.style.color;
+  if (currentColor === BASE_COLOR) {
+    title.style.color = OTHER_COLOR;
+  } else {
+    title.style.color = BASE_COLOR;
+  }
 }
-
-info("yong", 15);
-*/
-/*
-function sayHello(name, age) {
-  return `hello ${name} you are ${age} years old`;
+function init() {
+  title.style.color = BASE_COLOR;
+  title.addEventListener("click", handleClick);
 }
-
-const greetYong = sayHello("yong", 300);
-
-console.log(greetYong);
-*/
-
-const calculator = {
-  plus: function (a, b) {
-    return a + b;
-  },
-  minus: function (a, b) {
-    return a - b;
-  },
-  mul: function (a, b) {
-    return a * b;
-  },
-  div: function (a, b) {
-    return a / b;
-  },
-};
-
-const plus = calculator.plus(5, 5);
-const minus = calculator.minus(5, 5);
-const mul = calculator.mul(5, 5);
-const div = calculator.div(5, 5);
-console.log(plus);
-console.log(minus);
-console.log(mul);
-console.log(div);
+init();
