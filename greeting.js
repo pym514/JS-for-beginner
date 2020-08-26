@@ -1,13 +1,21 @@
 const form = document.querySelector(".js-form"),
-  intput = form.querySelector("input"),
-  greeting = document.querySelector(".js-greetings");
+  input = form.querySelector("input"),
+  greeting = document.querySelector(".js-greetings"),
+  del = document.querySelector(".del");
 
 const USER_LS = "currentUser",
   SHOWING_CN = "showing";
 
+function saveName(text) {
+  localStorage.setItem(USER_LS, text);
+}
+
 function handleSubmit(event) {
-  event.preventDefault();
+  event.preventDefault(); //form 작동 X
   const currentValue = input.value;
+  paintGreeting(currentValue);
+  window.location.reload();
+  saveName(currentValue);
 }
 
 function askForName() {
@@ -18,19 +26,28 @@ function askForName() {
 function paintGreeting(text) {
   form.classList.remove(SHOWING_CN);
   greeting.classList.add(SHOWING_CN);
-  greeting.innerHTML = `Hello ${text}`;
+  greeting.innerText = `Hello ${text}`;
 }
+
 function loadName() {
   const currentUser = localStorage.getItem(USER_LS);
+
   if (currentUser === null) {
     askForName();
-    //when user is not here
   } else {
-    //when user is here
     paintGreeting(currentUser);
+    // del.classList.add(SHOWING_CN);
   }
 }
+
+function delName() {
+  localStorage.removeItem(USER_LS);
+  window.location.reload();
+}
+
 function init() {
   loadName();
+  //del.addEventListener("click", delName);
 }
+
 init();
