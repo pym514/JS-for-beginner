@@ -1,5 +1,4 @@
 # Javascript
-## Clone Coding to learn Javascript
 ![screenshot_20171221-151714](https://1.bp.blogspot.com/-9WRciCmNiNw/X0dB2ZGIHZI/AAAAAAAAM6k/JFJqUmp9gJkeHItcY2zM4hrqU4KE-dZNgCLcBGAsYHQ/s640/mainPage.PNG)
 
 ### Make ToDoList
